@@ -5,116 +5,131 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New House with Garden</title>
+    <title>New House</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../vendor/editor/editor.css">
+
 </head>
 
-<body>
-    <div class="container">
+<body onload="adjustEditor()" onresize="adjustEditor()">
 
-        <div class="result-box">
-            <h2 class="result">Hey, you have a great garden with 88 Tulips and 50.56 USD left.</h2>
-        </div>
-
-        <img src="./images/flowers/tulips.png" class="tulips-result Tulips flwr">
-        <img src="./images/flowers/roses.png" class="roses-result Roses flwr">
-        <img src="./images/flowers/gladiolus.png" class="gladiolus-result Gladiolus flwr">
-        <img src="./images/flowers/narcissus.png" class="narcissus-result Narcissus flwr">
-        <img src="./images/flowers/dahlias.png" class="dahlias-result Dahlias flwr">
-
+    <div class="main-box">
 
         <div class="wrapper">
 
-            <h3 class="main-title-1">NEW HOUSE</h3>
-            <h3 class="main-title-2">NEW HOUSE</h3>
+            <div class="container">
 
-            <div class="box a"></div>
-            <div class="box b"></div>
-            <div class="box c"></div>
-            <div class="box d"></div>
-            <div class="box e"></div>
-            <div class="box f"></div>
-            <div class="box g"></div>
-            <div class="box h"></div>
-            <div class="box i"></div>
-        </div>
-
-        <div class="white-bg"></div>
-        <div class="color-bg"></div>
-
-        <div class="btn-container-calc" onclick="execute()">
-            <a class="calc">CALCULATE
-                <div class="rectangle"></div>
-            </a>
-        </div>
-
-        <div class="btn-container-rstr" onclick="restart()">
-            <a class="rstr">RESTART
-                <div class="rectangle"></div>
-            </a>
-        </div>
-
-        <div class="input-buttons">
-
-            <div onclick="openFlowers()" class="flowers-btn">FLOWERS</div>
-            <div class="flowers-box">
-
-                <div onclick="closeFlowers()" class="close-btn-1">x</div>
-
-                <div class="flowers">
-                    <div class="input rose-input">
-                        <input class="flower" type="radio" id="Roses" name="radio-group" checked>
-                        <img src="./images/icons/rose.png" class="rose-icon">
-                        <label>Roses</label>
-                    </div>
-
-                    <div class="input dahlia-input">
-                        <input class="flower" type="radio" id="Dahlias" name="radio-group">
-                        <img src="./images/icons/dahlia.png" class="dahlia-icon">
-                        <label for="test1">Dahlias</label>
-                    </div>
-
-                    <div class="input tulip-input">
-                        <input class="flower" type="radio" id="Tulips" name="radio-group">
-                        <img src="./images/icons/tulip.png" class="tulip-icon">
-                        <label for="test1">Tulips</label>
-                    </div>
-
-                    <div class="input narcissus-input">
-                        <input class="flower" type="radio" id="Narcissus" name="radio-group">
-                        <img src="./images/icons/narcissus.png" class="narcissus-icon">
-                        <label for="test1">Narcissus</label>
-                    </div>
-
-                    <div class="input gladiolus-input">
-                        <input class="flower" type="radio" id="Gladiolus" name="radio-group">
-                        <img src="./images/icons/gladiolus.png" class="gladiolus-icon">
-                        <label for="test1">Gladiolus</label>
-                    </div>
+                <div class="result-box">
+                    <h2 class="result">Hey, you have a great garden with 88 Tulips and 50.56 USD left.</h2>
                 </div>
 
+                <img src="./images/flowers/tulips.png" class="tulips-result Tulips flwr">
+                <img src="./images/flowers/roses.png" class="roses-result Roses flwr">
+                <img src="./images/flowers/gladiolus.png" class="gladiolus-result Gladiolus flwr">
+                <img src="./images/flowers/narcissus.png" class="narcissus-result Narcissus flwr">
+                <img src="./images/flowers/dahlias.png" class="dahlias-result Dahlias flwr">
 
-                <div class='ctrl'>
-                    <div class='ctrl-button ctrl-button-decrement'>-</div>
-                    <div class='ctrl-counter'>
-                        <input class='ctrl-counter-input' required type="number" min="10" max="1000">
-                        <div class='ctrl-counter-num'>55</div>
-                    </div>
-                    <div class='ctrl-button ctrl-button-increment'>+</div>
+
+                <div class="wrapper-2">
+
+                    <h3 class="main-title-1">NEW HOUSE</h3>
+                    <h3 class="main-title-2">NEW HOUSE</h3>
+
+                    <div class="box a"></div>
+                    <div class="box b"></div>
+                    <div class="box c"></div>
+                    <div class="box d"></div>
+                    <div class="box e"></div>
+                    <div class="box f"></div>
+                    <div class="box g"></div>
+                    <div class="box h"></div>
+                    <div class="box i"></div>
+
                 </div>
 
-            </div>
+                <div class="white-bg"></div>
+                <div class="color-bg"></div>
 
-            <div onclick="openBudget()" class="budget-btn">BUDGET</div>
-            <div class="budget-box">
+                <div class="btn-container-calc" onclick="checkInputs()">
+                    <a class="calc">CALCULATE
+                        <div class="rectangle"></div>
+                    </a>
+                </div>
 
-                <div onclick="closeBudget()" class="close-btn-2">x</div>
+                <div class="btn-container-rstr" onclick="restart()">
+                    <a class="rstr">RESTART
+                        <div class="rectangle"></div>
+                    </a>
+                </div>
 
-                <div class="number">
-                    <img src="./images/icons/wallet.png" class="wallet-icon">
-                    <label class="num">Budget:</label>
-                    <input id="budget" type="number" required min="50" max="2500" value="250">
-                    <p class="small-info">Scroll inside the input.</p>
+                <div class="input-buttons">
+
+                    <img src="./images/arrow-1.png" class="arrow arrow-1">
+                    <img src="./images/arrow-1.png" class="arrow arrow-2">
+
+                    <div onclick="openFlowers()" class="flowers-btn">FLOWERS</div>
+
+                    <div class="flowers-box">
+
+                        <div onclick="closeFlowers()" class="close-btn-1">ok</div>
+
+                        <label class="num type">Flowers Type:</label>
+
+                        <div class="flowers">
+                            <div class="input rose-input">
+                                <input class="flower" type="radio" id="Roses" name="radio-group" checked>
+                                <img src="./images/icons/rose.png" class="rose-icon">
+                                <label>Roses</label>
+                            </div>
+
+                            <div class="input dahlia-input">
+                                <input class="flower" type="radio" id="Dahlias" name="radio-group">
+                                <img src="./images/icons/dahlia.png" class="dahlia-icon">
+                                <label for="test1">Dahlias</label>
+                            </div>
+
+                            <div class="input tulip-input">
+                                <input class="flower" type="radio" id="Tulips" name="radio-group">
+                                <img src="./images/icons/tulip.png" class="tulip-icon">
+                                <label for="test1">Tulips</label>
+                            </div>
+
+                            <div class="input narcissus-input">
+                                <input class="flower" type="radio" id="Narcissus" name="radio-group">
+                                <img src="./images/icons/narcissus.png" class="narcissus-icon">
+                                <label for="test1">Narcissus</label>
+                            </div>
+
+                            <div class="input gladiolus-input">
+                                <input class="flower" type="radio" id="Gladiolus" name="radio-group">
+                                <img src="./images/icons/gladiolus.png" class="gladiolus-icon">
+                                <label for="test1">Gladiolus</label>
+                            </div>
+                        </div>
+
+                        <div class="flowers-count-box">
+                            <label class="num">Flowers Count:</label>
+                            <input id="flowers-count" type="number" required min="10" max="1000" value="55">
+                            <p class="small-info">Scroll inside the input.</p>
+                        </div>
+
+                    </div>
+
+                    <div onclick="openBudget()" class="budget-btn">BUDGET</div>
+
+                    <div class="budget-box">
+
+                        <div onclick="closeBudget()" class="close-btn-2">ok</div>
+
+                        <div class="number">
+                            <img src="./images/icons/wallet.png" class="wallet-icon">
+                            <label class="num">Budget:</label>
+                            <input id="budget" type="number" required min="50" max="2500" value="250">
+                            <p class="small-info">Scroll inside the input.</p>
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -125,10 +140,24 @@
 
 </body>
 
-<script src="../vendor/jquery.min.js"></script>
+<script src="../vendor/editor/js/jquery.min.js"></script>
+<script src="../vendor/jquery.waypoints.min.js"></script>
+<script src="../vendor/jquery.counterup.min.js"></script>
+<script src="../vendor/editor/js/jquery-resizable.js"></script>
+<script src="https://ajaxorg.github.io/ace-builds/src-noconflict/ace.js"></script>
+<script src="../vendor/editor/js/editor.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="./new-house.js"></script>
+
 <script>
 
-    let wrapper = document.querySelector('.wrapper');
+    //Трябва основният HTML на задачите да е в <div class="main-box"> за да се постави правилно едитора
+    var editor = prepareBodyForEditor('.main-box', 'editor', 'new-house.js', newHouse);
+
+
+    let wrapper = document.querySelector('.wrapper-2');
     let colorBg = document.querySelector('.color-bg');
     let btn = document.querySelector('.btn-container-calc');
     let rstrBtn = document.querySelector('.btn-container-rstr');
@@ -139,6 +168,7 @@
     let budgetBox = document.querySelector('.budget-box');
     let resultBox = document.querySelector('.result-box');
     let flowersList = document.querySelectorAll('.flwr');
+    let arrows = document.querySelectorAll('.arrow');
 
     function restart() {
         colorBg.style = "opacity:0";
@@ -155,35 +185,75 @@
         flowersList.forEach((element) => {
             element.style = "opacity:0";
         });
+
+        arrows.forEach((arrow) => {
+            arrow.style = "opacity:1";
+        });
+    }
+
+    function checkInputs() {
+
+        let flowersCount = Number(document.querySelector('#flowers-count').value);
+        let budget = Number(document.querySelector('#budget').value);
+
+        if (flowersCount < 10 || flowersCount > 1000) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid input!',
+                text: `Please, provide a flowers count between 10 and 1000!`,
+            });
+            empty = true;
+            return;
+        } if (budget < 50 || budget > 2500) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid input!',
+                text: `Please, provide a budget between 50 and 2500!`,
+            });
+            empty = true;
+            return;
+        } else {
+            execute();
+        }
+
     }
 
     function execute() {
 
         let flower = document.querySelector('.flower:checked').id;
-        let flowersCount = Number(document.querySelector('.ctrl-counter-input').value);
-        let budget = Number(document.querySelector('#budget').value);
         let resultText = document.querySelector('.result');
 
-        // TODO: Make the necessary calculation:
-        let enoughBudget = true;
-        let restAmount = 0;
-        let neededAmont = 0;
+        let flowersCount = Number(document.querySelector('#flowers-count').value);
+        let budget = Number(document.querySelector('#budget').value);
 
-        if (enoughBudget) {
+        let result = "";
+        const originalConsoleLog = console.log.bind(console);
+        console.log = (...args) => {
+            result = result + args.join(" ");
+            originalConsoleLog(...args);
+        }
 
-            resultText.innerText = `Hey, you have a great garden with ${flowersCount} ${flower} and ${restAmount} USD left.`;
+        eval(executeEditorCode(editor));
 
+        // Execute the solution code
+        let executionResult = newHouse(flower, flowersCount, budget);
+        if (executionResult)
+            result = result + executionResult;
+
+        resultText.innerText = result;
+
+        if (result.includes("USD left")) {
             flowersList.forEach((element) => {
 
                 if (element.classList.contains(flower)) {
                     element.style = "opacity:1";
                 }
             });
-        } else {
-
-            resultText.innerText = `Not enough money, you need ${neededAmont} USD more.`;
-
         }
+
+        arrows.forEach((arrow) => {
+            arrow.style = "opacity:0";
+        });
 
         colorBg.style = "opacity:1";
         wrapper.style = "opacity:0";
@@ -198,13 +268,16 @@
     }
 
     function openFlowers() {
+
+        let flowersType = document.querySelector('.type');
         let flowersInputs = document.querySelectorAll('.input');
-        let numberInput = document.querySelector('.ctrl');
+        let numberInput = document.querySelector('.flowers-count-box');
         let closeBtn = document.querySelector('.close-btn-1');
 
         flowersBtn.classList.add('flowers-btn-clicked');
         budgetBtn.style = "z-index:0";
         closeBtn.style = "display:block";
+        flowersType.style = "display:block";
         flowersBox.classList.add('flowers-box-expand');
 
         setTimeout(() => {
@@ -213,21 +286,26 @@
             });
             numberInput.style = "display:flex";
         }, 500);
+
     }
 
     function closeFlowers() {
+
+        let flowersType = document.querySelector('.type');
         let flowersInputs = document.querySelectorAll('.input');
-        let numberInput = document.querySelector('.ctrl');
+        let numberInput = document.querySelector('.flowers-count-box');
         let closeBtn = document.querySelector('.close-btn-1');
 
         flowersBtn.classList.remove('flowers-btn-clicked');
         budgetBtn.style = "z-index:1000";
         numberInput.style = "display:none";
+        flowersType.style = "display:none";
         closeBtn.style = "display:none";
         flowersBox.classList.remove('flowers-box-expand');
         flowersInputs.forEach(element => {
             element.style = "display:none";
         });
+
     }
 
     function openBudget() {
@@ -256,106 +334,6 @@
         numberInput.style = "display:none";
 
     }
-
-</script>
-
-<!-- Increment and Decrement Buttons -->
-<script>
-    (function () {
-        "use strict";
-
-        function ctrls() {
-            var _this = this;
-
-            this.counter = 55;
-            this.els = {
-                decrement: document.querySelector(".ctrl-button-decrement"),
-                counter: {
-                    container: document.querySelector(".ctrl-counter"),
-                    num: document.querySelector(".ctrl-counter-num"),
-                    input: document.querySelector(".ctrl-counter-input")
-                },
-                increment: document.querySelector(".ctrl-button-increment")
-            };
-
-            this.decrement = function () {
-                var counter = _this.getCounter();
-                var nextCounter = _this.counter > 10 ? --counter : counter;
-                _this.setCounter(nextCounter);
-            };
-
-            this.increment = function () {
-                var counter = _this.getCounter();
-                var nextCounter = counter < 1000 ? ++counter : counter;
-                _this.setCounter(nextCounter);
-            };
-
-            this.getCounter = function () {
-                return _this.counter;
-            };
-
-            this.setCounter = function (nextCounter) {
-                _this.counter = nextCounter;
-            };
-
-            this.debounce = function (callback) {
-                setTimeout(callback, 100);
-            };
-
-            this.render = function (hideClassName, visibleClassName) {
-                _this.els.counter.num.classList.add(hideClassName);
-
-                setTimeout(function () {
-                    _this.els.counter.num.innerText = _this.getCounter();
-                    _this.els.counter.input.value = _this.getCounter();
-                    _this.els.counter.num.classList.add(visibleClassName);
-                }, 100);
-
-                setTimeout(function () {
-                    _this.els.counter.num.classList.remove(hideClassName);
-                    _this.els.counter.num.classList.remove(visibleClassName);
-                }, 200);
-            };
-
-            this.ready = function () {
-                _this.els.decrement.addEventListener("click", function () {
-                    _this.debounce(function () {
-                        _this.decrement();
-                        _this.render("is-decrement-hide", "is-decrement-visible");
-                    });
-                });
-
-                _this.els.increment.addEventListener("click", function () {
-                    _this.debounce(function () {
-                        _this.increment();
-                        _this.render("is-increment-hide", "is-increment-visible");
-                    });
-                });
-
-                _this.els.counter.input.addEventListener("input", function (e) {
-                    var parseValue = parseInt(e.target.value);
-                    if (!isNaN(parseValue) && parseValue >= 10) {
-                        _this.setCounter(parseValue);
-                        _this.render();
-                    }
-                });
-
-                _this.els.counter.input.addEventListener("focus", function (e) {
-                    _this.els.counter.container.classList.add("is-input");
-                });
-
-                _this.els.counter.input.addEventListener("blur", function (e) {
-                    _this.els.counter.container.classList.remove("is-input");
-                    _this.render();
-                });
-            };
-        }
-
-        // init
-        var controls = new ctrls();
-        document.addEventListener("DOMContentLoaded", controls.ready);
-    })();
-
 </script>
 
 
