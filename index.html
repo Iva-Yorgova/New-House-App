@@ -7,11 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New House</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="../vendor/editor/editor.css">
 
 </head>
 
-<body onload="adjustEditor()" onresize="adjustEditor()">
+<body>
 
     <div class="main-box">
 
@@ -143,9 +142,7 @@
 <script src="../vendor/editor/js/jquery.min.js"></script>
 <script src="../vendor/jquery.waypoints.min.js"></script>
 <script src="../vendor/jquery.counterup.min.js"></script>
-<script src="../vendor/editor/js/jquery-resizable.js"></script>
 <script src="https://ajaxorg.github.io/ace-builds/src-noconflict/ace.js"></script>
-<script src="../vendor/editor/js/editor.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -154,7 +151,6 @@
 <script>
 
     //Трябва основният HTML на задачите да е в <div class="main-box"> за да се постави правилно едитора
-    var editor = prepareBodyForEditor('.main-box', 'editor', 'new-house.js', newHouse);
 
 
     let wrapper = document.querySelector('.wrapper-2');
@@ -233,7 +229,6 @@
             originalConsoleLog(...args);
         }
 
-        eval(executeEditorCode(editor));
 
         // Execute the solution code
         let executionResult = newHouse(flower, flowersCount, budget);
