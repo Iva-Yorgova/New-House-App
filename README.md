@@ -1,4 +1,4 @@
 # New-House-App
-HTML CSS JS
+HTML | CSS | JavaScript
 
 [visit website](https://new-house-with-garden.netlify.app/)
